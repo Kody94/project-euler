@@ -1,10 +1,15 @@
-arr_new = []
-i = 1
-input_number = 400000
-while i < input_number:
-    if input_number%i == 0:
-        arr_new.append(input_number/i)
-    i += 1
+def prime_factor(n):
+    prime_numbers = []
+    while n%2 == 0:
+        prime_numbers.append(2)
+        n = n/2
+        print(prime_numbers)
+    i = 3
+    while n%i == 0:
+        prime_numbers.append(i)
+        n = n/i
+        print(prime_numbers)
 
-arr_new.sort(reverse=True)
-print(arr_new[1])
+    return prime_numbers
+
+print(prime_factor(600851475143))
