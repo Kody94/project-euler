@@ -7,16 +7,14 @@ def is_prime(n):
             return False
     return True
 
-def calc_prime_pos():
+def calc_prime_pos(x):
     prime_numbers = []
     i = 0
     answer = 0
-    while True:
+    while len(prime_numbers) < x:
         if is_prime(i):
             prime_numbers.append(i)
-            i += 1
-            if len(prime_numbers) == 100001:
-                return prime_numbers[100001]
-                break
+        i += 1
+    return prime_numbers[len(prime_numbers) - 1]
 
-print(calc_prime_pos())
+print(calc_prime_pos(10001))
